@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card {
+        background: white;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        margin: 10px 0;
+      }
+
+      p {
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .skills span {
+        display: inline-block;
+        background: #ddd;
+        padding: 5px 10px;
+        margin: 3px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+
+      button {
+        padding: 8px 12px;
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      #quote {
+        margin-top: 10px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <img
+        src="https://i.pravatar.cc/150?img=12"
+        class="profile-img"
+        alt="profile"
+      />
+
+      <h2>Alex Johnson</h2>
+
+      <p>A future Web Developer 🚀</p>
+
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <button onclick="changeQuote()">Change Quote</button>
+
+      <p id="quote">Dream big and start coding.</p>
+    </div>
+
+    <script>
+      const quotes = [
+        "Dream big and start coding.",
+        "Every expert was once a beginner.",
+        "Code your future.",
+        "Small steps lead to big success.",
+      ];
+
+      function changeQuote() {
+        const random = Math.floor(Math.random() * quotes.length);
+        document.getElementById("quote").innerText = quotes[random];
+      }
+    </script>
+  </body>
+</html>

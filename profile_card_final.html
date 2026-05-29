@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+        transition: 0.4s;
+      }
+
+      /* CARD */
+      .card {
+        background: white;
+        width: 320px;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 4px solid #6c63ff;
+        transition: 0.3s;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        color: #222;
+        transition: 0.3s;
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .skills span {
+        background: #6c63ff;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        margin: 4px;
+        display: inline-block;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      .skills span:hover {
+        background: #4b42d6;
+        transform: scale(1.1);
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 5px;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.08);
+        opacity: 0.9;
+      }
+
+      .dark-btn {
+        background: #222;
+        color: white;
+      }
+
+      .quote-btn {
+        background: #6c63ff;
+        color: white;
+      }
+
+      #quote {
+        margin-top: 15px;
+        font-style: italic;
+        color: #444;
+      }
+
+      .dark-mode {
+        background: #121212;
+      }
+
+      .dark-mode .card {
+        background: #1f1f1f;
+        color: white;
+      }
+
+      .dark-mode h2 {
+        color: #ffffff;
+      }
+
+      .dark-mode p,
+      .dark-mode #quote {
+        color: #cccccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <!-- src="https://i.pravatar.cc/150?img=12" -->
+      <img src="./assets/default.webp" class="profile-img" alt="profile" />
+
+      <h2 id="name">Alex Johnson</h2>
+
+      <p>A future Web Developer 🚀</p>
+
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <button class="dark-btn" onclick="toggleDarkMode()">
+        Toggle Dark Mode
+      </button>
+
+      <button class="quote-btn" onclick="changeQuote()">Surprise Me</button>
+
+      <p id="quote">Dream big and start coding.</p>
+    </div>
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      const quotes = [
+        "Dream big and start coding.",
+        "Every expert was once a beginner.",
+        "Code your future.",
+        "Small steps lead to big success.",
+        "Creativity + Coding = Magic.",
+      ];
+
+      function changeQuote() {
+        const random = Math.floor(Math.random() * quotes.length);
+        document.getElementById("quote").innerText = quotes[random];
+      }
+    </script>
+  </body>
+</html>
